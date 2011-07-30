@@ -1,5 +1,7 @@
 import datetime
 
+import models
+
 def getAllTabs(user):
     query1 = Tab.objects.all().filter(userID1=user)
     query2 = Tab.objects.all().filter(userID2=user)
@@ -53,7 +55,7 @@ def getTotalOwed(user, tab):
     
 def autoShuffle(tabID):   
     depthLimit = 5
-    tab = (Tab.objects.all().filter(id=tab))[0]    
+    tab = (Tab.objects.all().filter(id=tabID))[0]    
     start = tab.userID1
     target = tab.userID2
     backtrack = {start:(-1,0,-1)}
