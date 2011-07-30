@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class User(models.Model):
-    facebookID = models.CharField(max_length=50)
+    facebookID = models.IntegerField()
     def __unicode__(self):
         return self.id
 
